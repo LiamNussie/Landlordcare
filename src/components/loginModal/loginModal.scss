@@ -1,0 +1,112 @@
+.login-modal {
+    position: fixed;
+    width: 100vw;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    height: 100vh;
+    animation: fadeIn 150ms linear 1;
+    background-color: rgba(11, 14, 17, 0.2);
+
+    .wrapper {
+        width: 100vw;
+        left: 0;
+        top: 0;
+        height: 100vh;
+        position: relative;
+        z-index: 1000;
+
+        .modal {
+            border-radius: 20px;
+            width: 650px;
+            box-shadow: 0px 18px 36px #00000017;
+            background-color: #fff;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 2rem 3rem 2.5rem 3rem;
+            z-index: 1000;
+
+            .bottom {
+                display: flex;
+                align-items: center;
+                margin-top: 30px;
+
+                button {
+                    margin-right: 20px;
+                    outline: none;
+                    border: none;
+                    background-color: #F36B09;
+                    color: #fff;
+                    width: 100px;
+                    border-radius: 6px;
+                    padding: 13px 4px;
+
+                    i {
+                        margin-left: 10px;
+                    }
+                }
+                .info {
+                    margin-right: 20px;
+                    font-weight: 500;
+                }
+                .socials {
+                    img {
+                        margin-right: 10px;
+                    }
+                }
+            }
+
+            .top {
+                display: flex;
+                justify-content: space-between;
+
+                .mtitle {
+                    color: #1E2329;
+                    font-size: 22px;
+                    font-weight: 700;
+                }
+
+                svg {
+                    cursor: pointer;
+                }
+            }
+
+            form {
+                margin-top: 40px;
+
+                .input {
+                    margin-bottom: 20px;
+                    position: relative;
+
+                    i {
+                        position: absolute;
+                        right: 3%;
+                        top: 57%;
+                        color: #6B7588;
+                        cursor: pointer;
+                    }
+
+                    label {
+                        font-size: 16px;
+                        font-weight: 700;
+                        color: #8F90A6;
+                        
+                    }
+                    input {
+                        outline: none;
+                        width: 100%;
+                        border: 1px solid #DDE5E9;
+                        box-sizing: border-box;
+                        margin-top: 7px;
+                        border-radius: 6px;
+                        background-color: #F5F5F5;
+                        padding: 14px 35px 14px 14px;
+                        font-family: 'Quicksand', sans-serif;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,55 @@
+.hero {
+    
+    
+    .top {
+        height: 62vh;
+        padding: 2rem 8rem;
+        background-image: url(../../../assets/home-assets/herobg.svg);
+    
+
+    .bld {
+        font-size: 34px;
+        font-weight: 600;
+        margin-top: 10rem;
+        color: #fff;
+
+        span {
+            color: #F36B09;
+        }
+    }
+  }
+
+    .ex-sec {
+        text-align: center;
+        margin-top: 50px;
+
+        .top-title {
+            font-weight: 600;
+            font-size: 17px;
+            margin-bottom: 10px;
+        }
+
+    .explore-opts {
+        display: flex;
+        padding: 1rem 6rem;
+        width: 100%;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        
+        .opt-box {
+            flex: 0 0 200px;
+            text-align: center;
+        .opt {
+            background-size: cover;
+            height: 160px;
+            border-radius: 20px;
+            background-color: gray;
+        }
+        .label {
+            margin-top: 10px;
+            font-weight: 600;
+        }
+    }
+    }
+}
+}

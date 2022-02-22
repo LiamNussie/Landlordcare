@@ -1,0 +1,46 @@
+.highlights {
+    padding: 2rem 6rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    .boxxx {
+        flex: 1 1 300px;
+        background-color: #FDE9DA;
+        position: relative;
+        padding: 1.5rem 1.5rem 3rem 1.5rem;
+        border-radius: 10px;
+
+        img {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 25%;
+        }
+
+        .text {
+            margin-bottom: 15px;
+            width: 250px;
+            font-weight: 700;
+            color: #1E2329;
+
+            span {
+                font-size: 26px;
+                color: #F36B09;
+                margin-right: 7px;
+            }
+        }
+        .action {
+            color: #F36B09;
+            font-weight: 600;
+            position: absolute;
+            bottom: 10%;
+            cursor: pointer;
+
+            i {
+                margin-left: 13px;
+            }
+        }
+    }
+}

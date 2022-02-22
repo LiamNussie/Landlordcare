@@ -1,0 +1,108 @@
+.proj-prop {
+    padding: 5.9rem 0;
+    background-color:  #f0f0f0;
+
+    .filters {
+        background-color: #F36B09;
+        display: flex;
+        justify-content: space-around;
+        gap: 20px;
+        position: fixed;
+        padding: .9rem 12rem;
+        width: 100%;
+        z-index: 100;
+
+        select {
+            padding: 12px 30px;
+            border-radius: 20px;
+            outline: none;
+            font-family: 'Quicksand', sans-serif;
+            color: #1E2329;
+            cursor: pointer;
+            border: none;
+        }
+    }
+
+    .cont {
+        padding: 6rem 6rem 0 6rem;
+
+        .sort {
+            background-color: #fff;
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 1.7rem;
+            align-items: center;
+
+            .left {
+                font-weight: 700;
+                font-size: 18px;
+            }
+            .input {
+                label {
+                    font-size: 14px;
+                    
+                    img {
+                        transform: translateY(2px);
+                        margin-right: 4px;
+                        cursor: pointer;
+                    }
+                }
+                select {
+                    padding: 12px 5px;
+                    font-size: 14px;
+                    font-weight: 700;
+                    outline: none;
+                    font-family: 'Quicksand', sans-serif;
+                    color: #1E2329;
+                    cursor: pointer;
+                    border: none;
+                }
+            }
+        }
+
+        .toggles {
+            display: flex;
+            margin-top: 30px;
+            margin-bottom: 5px;
+            gap: 1px;
+
+
+            li {
+                list-style: none;
+                cursor: pointer;
+                padding: 10px 15px;
+                background-color: #fff;
+                transition: 250ms esae;
+                
+
+            }
+
+            .active {
+                background-color: #FDE9DA;
+            }
+        }
+
+    .directory {
+        display: flex;
+        .prev {
+            font-size: 14px;
+            margin: 0 5px;
+
+            i {
+                margin-left: 5px;
+                transform: translateY(1px);
+            }
+        }
+        .curr {
+            font-size: 14px;
+            margin: 0 5px;
+            font-weight: 700;
+
+            i {
+                margin-left: 5px;
+                transform: translateY(1px);
+            }
+        }
+    }
+  }
+}

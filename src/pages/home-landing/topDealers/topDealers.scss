@@ -1,0 +1,75 @@
+.top-dealers {
+    padding: 1.5rem 12rem 2rem 12rem;
+    margin-bottom: 20px;
+
+    .heading {
+        font-size: 24px;
+            font-weight: 700;
+            color: #000000;
+            margin-bottom: 30px;
+    }
+
+    .nav {
+        display: flex;
+        border-bottom: 0.3px solid #C4C4C4;
+        margin-bottom: 50px;
+        box-sizing: border-box;
+        width: max-content;
+
+        li {
+            list-style: none;
+            text-align: center;
+            font-size: 16px;
+            font-weight: 700;
+            color: #000000;
+            padding-bottom: .7rem;
+            padding: 0 3.5rem .7rem 2rem;
+            width: max-content;
+            cursor: pointer;
+        }
+
+        .active {
+            border-bottom: 3px solid #F5811E;
+        }
+    }
+
+    .content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 30px;
+
+        .unit {
+            flex: 1 1 300px;
+            border: 1px solid #000000;
+            box-sizing: border-box;
+            padding: 2rem;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+
+            .img {
+                border-radius: 50%;
+                width: 64px;
+                height: 64px;
+                background-color: #c4c4c4;
+                margin-right: 10px;
+            }
+
+            .txtx {
+
+            .dealer {
+                font-size: 16px;
+                font-weight: 700;
+                color: #000000;
+                margin-bottom: 10px;
+            }
+            .units {
+                font-size: 14px;
+                font-weight: 600;
+                color: #c4c4c4;
+            }
+          }
+        }
+    }
+}

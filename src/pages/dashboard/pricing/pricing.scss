@@ -1,0 +1,99 @@
+.pricing {
+    padding-bottom: 3rem;
+    padding-top: 1rem;
+    .titlep {
+        font-weight: 700;
+        font-size: 24px;
+        margin-bottom: 8px;
+        color: #1E2329;
+    }
+    .para {
+        font-weight: 500;
+    }
+
+    svg {
+        margin-top: 70px;
+        margin-bottom: 40px;
+    }
+
+    .plans {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 0 4rem;
+        
+
+        .plan {
+            flex: 1 1 250px;
+            background-color: #F5F5F5;
+            box-sizing: border-box;
+            border-radius: 20px;
+            padding: 1rem 2rem 4rem 2rem;
+            transition: 250ms ease;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #F36B09;
+                color: #fff !important;
+            }
+
+            .type {
+                padding: 7px 9px;
+                background-color: #F5F5F5;
+                border-radius: 10px;
+                width: fit-content;
+                font-size: 14px;
+                font-weight: 500;
+
+                i {
+                    margin-right: 7px;
+                    color: #F5811E;
+                }
+            }
+            .info {
+                margin-top: 10px;
+                font-size: 12px;
+                font-weight: 500;
+                color: #858688;
+            }
+            .price {
+                font-size: 24px;
+                font-weight: 700;
+                color: #1E2329;
+                margin-top: 20px;
+            }
+            .month {
+                color: #858688;
+                font-size: 12px;
+                font-weight: 600;
+                margin-top: 5px;
+            }
+            .action {
+                margin-top: 10px;
+                padding: 9px 30px;
+                background-color: #F36B09;
+                color: #fff;
+                border-radius: 10px;
+                width: fit-content;
+                font-size: 14px;
+                font-weight: 500;
+            }
+            .benefits {
+                line-height: 2;
+                margin-top: 20px;
+
+                li {
+                    list-style: none;
+                    font-size: 14px;
+                    font-weight: 500;
+
+                    i {
+                        color: #03A66D;
+                        margin-right: 7px;
+                        font-size: .7em;
+                    }
+                }
+            }
+        }
+    }
+}
