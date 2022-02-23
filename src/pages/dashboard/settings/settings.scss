@@ -1,3 +1,36 @@
 .settings {
-    
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 1.7rem 2rem 2.8rem 2rem;
+
+    .box {
+        flex: 0 0 400px;
+        background: #FAFAFC;
+        border-radius: 10px;
+        padding: 2.3rem 3rem;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        transition: 250ms ease;
+
+        &:hover {
+            background-color: #F36B09;
+            color: #fff !important;
+        }
+
+        img {
+            margin-right: 10px;
+            width: 18%;
+        }
+
+        .top {
+            font-weight: 700;
+        }
+        .para {
+            font-size: 15px;
+            margin-top: 5px;
+        }
+    }
 }
