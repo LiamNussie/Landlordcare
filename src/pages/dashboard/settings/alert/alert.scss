@@ -1,0 +1,128 @@
+.alert {
+    padding: 1rem 2rem 2rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 70px;
+
+  .lcont {
+    flex: 0 1 500px;
+
+    .toggles {
+        margin-top: 20px;
+
+        .toggle {
+            margin-bottom: 30px;
+            
+            .rig {
+                margin-top: 10px;
+
+                .bt {
+                    color: #b1b1ac;
+                }
+            }
+            .lef {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                .tt {
+                    font-weight: 500;
+                }
+
+                .tmp {
+                    display: flex;
+                    gap: 7px;
+                    align-items: center;
+                }
+
+                .span {
+                    font-size: 14px;
+                    color: #8F90A6;
+                    font-weight: 500;
+                }
+                .react-toggle--checked .react-toggle-track {
+                    background-color: #F36B09;
+                  }
+                  .react-toggle--checked .react-toggle-thumb {
+                    left: 27px;
+                    border-color: #F36B09;
+                  }
+                  .react-toggle-track {
+                      background-color: #fff;
+                      border: 1px solid #F36B09;
+                      color: #F36B09 !important;
+                  }
+                  .react-toggle-thumb {
+                      background-color: #F36B09;
+                      border: none;
+                      left: 3px;
+                      height: 20px;
+                      top: 2px;
+                  }
+                  .react-toggle-track-x {
+                      color: #F36B09 !important;
+                  }
+                  .react-toggle--checked .react-toggle-thumb {
+                      background-color: #fff;
+                  }
+                  .react-toggle--focus .react-toggle-thumb {
+                    -webkit-box-shadow: 0px 0px 3px 2px #F36B09;
+                    -moz-box-shadow: 0px 0px 3px 2px #F36B09;
+                    box-shadow: 0px 0px 2px 3px #F36B09;
+                  }
+                  
+                  .react-toggle:active:not(.react-toggle--disabled) .react-toggle-thumb {
+                    -webkit-box-shadow: 0px 0px 5px 5px #F36B09;
+                    -moz-box-shadow: 0px 0px 5px 5px #F36B09;
+                    box-shadow: 0px 0px 5px 5px #F36B09;
+                  }
+            }
+        }
+    }
+
+    .dir {
+      color: #1e2329;
+
+      svg {
+        transform: translateY(2px);
+        margin: 0 10px;
+      }
+    }
+    h2 {
+      margin-top: 10px;
+    }
+  }
+  .rcont {
+    flex: 1 1 500px;
+
+    .box {
+        // flex: 0 0 400px;
+        margin-top: 80px;
+        background: #FAFAFC;
+        border-radius: 20px;
+        padding: 2.3rem;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        transition: 250ms ease;
+
+        // &:hover {
+        //     background-color: #F36B09;
+        //     color: #fff !important;
+        // }
+
+        img {
+            margin-right: 20px;
+            width: 18%;
+        }
+
+        .top {
+            font-weight: 700;
+        }
+        .para {
+            font-size: 15px;
+            margin-top: 5px;
+        }
+    }
+}
+}

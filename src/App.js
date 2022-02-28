@@ -13,6 +13,7 @@ import ProjectPage from './pages/projectPage/projectPage';
 import ProjectView from './pages/propertyView/propertyView';
 import ManagerProfile from './pages/managerProfile/managerProfile';
 import Dashboard from './pages/dashboard/dashboard';
+import "react-toggle/style.css" 
 import PersonalInfo from './pages/dashboard/settings/personalInfo/personalInfo';
 import Land from './pages/land';
 

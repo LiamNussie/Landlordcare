@@ -71,6 +71,26 @@
                 position: relative;
                 margin-top: 20px;
 
+                .min {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-top: 20px;
+
+                    .txtm {
+                        font-size: 14px;
+                        color: #1E2329;
+                    }
+                    .btn {
+                        padding: 14px 32px;
+                        background: #FFE2E2;
+                        border-radius: 6px;
+                        font-weight: 700;
+                        color: #E53535;
+                        text-decoration: underline;
+                    }
+                }
+
                 .top {
                     display: flex;
                     justify-content: space-between;
@@ -145,10 +165,10 @@
             cursor: pointer;
             transition: 250ms ease;
     
-            &:hover {
-                background-color: #F36B09;
-                color: #fff !important;
-            }
+            // &:hover {
+            //     background-color: #F36B09;
+            //     color: #fff !important;
+            // }
     
             img {
                 margin-right: 20px;

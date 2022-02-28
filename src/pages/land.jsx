@@ -1,8 +1,10 @@
 import React from 'react'
 import { useState } from 'react';
+import Alert from './dashboard/settings/alert/alert';
 import BusinessInfo from './dashboard/settings/businessInfo/businessInfo';
 import PersonalInfo from './dashboard/settings/personalInfo/personalInfo';
 import Security from './dashboard/settings/security/security';
+import Verification from './dashboard/settings/verification/verification';
 import "./land.scss";
 
 const Land = (props) => {
@@ -32,6 +34,8 @@ const Land = (props) => {
         {page2 === "personal" && <PersonalInfo />}
         {page2 === "business" && <BusinessInfo />}
         {page2 === "security" && <Security />}
+        {page2 === "alerts" && <Alert />}
+        {page2 === "verification" && <Verification />}
     </div>
     
   )

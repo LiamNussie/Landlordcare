@@ -117,6 +117,13 @@ const Security = () => {
                 <img src={Yt} alt="youtube_icon" />
               </div>
           </div>
+          <div className="inputt">
+            <label>Deactivate Account</label>
+            <div className="min">
+              <p className="txtm">Deactivate your Account</p>
+              <p className="btn">Deactivate</p>
+            </div>
+          </div>
           <button>
             Update<i className="fas fa-arrow-right"></i>
           </button>

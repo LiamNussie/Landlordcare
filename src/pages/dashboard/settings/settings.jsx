@@ -36,7 +36,7 @@ const data = [
         img: Five,
         topText: "Account Verification",
         btmText: "Verify your personality and unlock more features",
-        url: "biometrics"
+        url: "verification"
     }
 ]
 
