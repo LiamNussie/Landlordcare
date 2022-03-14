@@ -5,20 +5,38 @@ import Logo2 from '../../assets/home-assets/logowhite.svg';
 import LoginModal from '../loginModal/loginModal';
 import SignupModal from '../signupModal/signupModal';
 import Pp from '../../assets/home-assets/userimg.png';
+import { useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+import { useState } from 'react';
 
-const Navbar = ({auth}) => {
-    
+const Navbar = () => {
+
+    const currentUser = useSelector(({userData}) => userData.currentUser)
+    console.log(currentUser)
+    // const {firstname, image} = currentUser?.data;
+
+    const [showLogin, setShowLogin] = useState(false);
+    const [showSignup, setShowSignup] = useState(false);
+    const history = useHistory();
+
+    const handleModals = () => {
+        if(!currentUser) {
+            setShowSignup(true)
+        } else {
+            history.push("/create-listing-flat")
+        }
+    }
 
     return (
-        <div className={auth ? "navbar auth-nav" : "navbar"}>
+        <div className={currentUser ? "navbar auth-nav" : "navbar"}>
             <div className="left">
-                {auth ? <img src={Logo2} alt="llc logo" className="logo" /> : <img src={Logo} alt="llc logo" className="logo" />}
+                {currentUser ? <img src={Logo2} alt="llc logo" className="logo" /> : <img src={Logo} alt="llc logo" className="logo" />}
                 <div className="txts">
                     <p className="top-txt">LANDLORD CARE</p>
                     <p className="bottom-txt">Nigeria's No1 Property Portal</p>
                 </div>
             </div>
-            {auth ? 
+            {currentUser ? 
             <div className="search">
                 <select name="">
                     <option value="buy">Buy</option>
@@ -40,13 +58,13 @@ const Navbar = ({auth}) => {
             </div>}
             <div className="right">
                 <ul>
-                    {auth ? <><div style={{backgroundImage: `url(${Pp})`}} className='pp'></div><i className="fas fa-angle-down"></i></> : <li>Login<i className="fas fa-angle-down"></i></li>}
-                    <li className='diff'>Post Property<span>Free</span></li>
+                    {currentUser ? <><div style={{backgroundImage: `url(${currentUser?.data?.image})`}} className='pp'></div><i className="fas fa-angle-down"></i></> : <li onClick={() => setShowLogin(true)}>Login<i className="fas fa-angle-down"></i></li>}
+                    <li className='diff' onClick={handleModals}>Post Property<span>Free</span></li>
                 </ul>
             </div>
 
-            {/* <LoginModal /> */}
-            {/* <SignupModal /> */}
+            {showLogin && <LoginModal setShowLogin={setShowLogin} />}
+            {showSignup && <SignupModal setShowSignup={setShowSignup} />}
             
         </div>
     )

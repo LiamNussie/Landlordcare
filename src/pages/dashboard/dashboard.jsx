@@ -7,16 +7,20 @@ import Pricing from './pricing/pricing';
 import Responses from './responses/responses';
 import Settings from './settings/settings';
 import Shortlists from './shortlists/shortlists';
+import { useSelector } from 'react-redux';
 import Tips from './tips/tips';
 import { Switch, Route, NavLink } from 'react-router-dom';
 import PersonalInfo from './settings/personalInfo/personalInfo';
 import BusinessInfo from './settings/businessInfo/businessInfo';
 
 const Dashboard = () => {
+    const currentUser = useSelector(({userData}) => userData.currentUser)
+    const {firstname} = currentUser?.data;
+
     const [page, setPage] = useState("settings");
     return (
         <div className="dashboard">
-            <p className="title">Hey <span>John</span>, Welcome to your dashboard <span className='badge'><i className='fas fa-star'></i>Premium</span></p>
+            <p className="title">Hey <span>{firstname}</span>, Welcome to your dashboard <span className='badge'><i className='fas fa-star'></i>Premium</span></p>
 
             <ul className="dash_nav">
                 {/* <NavLink className="li" exact to="/dashboard" activeClassName="active">Dashboard</NavLink>

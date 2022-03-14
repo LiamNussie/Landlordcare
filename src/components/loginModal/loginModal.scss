@@ -7,6 +7,7 @@
     height: 100vh;
     animation: fadeIn 150ms linear 1;
     background-color: rgba(11, 14, 17, 0.2);
+    transition: 250ms ease-in;
 
     .wrapper {
         width: 100vw;
@@ -39,7 +40,7 @@
                     border: none;
                     background-color: #F36B09;
                     color: #fff;
-                    width: 100px;
+                    width: 120px;
                     border-radius: 6px;
                     padding: 13px 4px;
 

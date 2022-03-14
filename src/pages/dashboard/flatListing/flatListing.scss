@@ -1,0 +1,45 @@
+.flat-listing {
+    padding: 8rem 4rem 0 4rem;
+
+    .head {
+        font-family: 'Raleway', sans-serif;
+
+        .title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+    }
+
+    .steps-nav {
+        margin-top: 30px;
+        margin-bottom: 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .nav {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+
+            .number {
+                font-size: 36px;
+                font-weight: 700;
+                color: #F36B09;
+            }
+            .txts {
+                color: #1E2329;
+                .ttxt {
+                    font-weight: 600;
+                }
+                .btxt {
+                    margin-top: 3px;
+                    font-size: 14px;
+                }
+            }
+        }
+
+    }
+}

@@ -6,9 +6,13 @@ import PersonalInfo from './dashboard/settings/personalInfo/personalInfo';
 import Security from './dashboard/settings/security/security';
 import Verification from './dashboard/settings/verification/verification';
 import "./land.scss";
+import { useSelector } from 'react-redux';
 
 const Land = (props) => {
     const page2X = props.location.state.page;
+
+    const currentUser = useSelector(({userData}) => userData.currentUser)
+    const {firstname} = currentUser?.data;
 
     const [page, setPage] = useState("settings");
     const [page2, setPage2] = useState(page2X);
@@ -18,7 +22,7 @@ const Land = (props) => {
 
   return (
     <div className="land">
-        <p className="title">Hey <span>John</span>, Welcome to your dashboard <span className='badge'><i className='fas fa-star'></i>Premium</span></p>
+        <p className="title">Hey <span>{firstname}</span>, Welcome to your dashboard <span className='badge'><i className='fas fa-star'></i>Premium</span></p>
 
         <ul className="dash_nav">
             

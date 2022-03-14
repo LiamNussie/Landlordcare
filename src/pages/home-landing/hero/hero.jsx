@@ -2,6 +2,7 @@ import './hero.scss';
 import Img1 from '../../../assets/home-assets/Rectangle12.png';
 import Img2 from '../../../assets/home-assets/Rectangle121.png';
 import Img3 from '../../../assets/home-assets/Rectangle122.png';
+import { useSelector } from 'react-redux';
 
 const data = [
     {
@@ -31,9 +32,13 @@ const data = [
 ]
 
 const Hero = () => {
+
+    const currentUser = useSelector(({userData}) => userData.currentUser)
+    // const {firstname, image} = currentUser?.data;
+
   return <div className='hero'>
       <div className="top">
-          <p className="bld"><span>John,</span>Welcome Back To The Best <br /> Choice Property Portal</p>
+          <p className="bld"><span>{currentUser && `${currentUser?.data?.firstname},`}</span>Welcome {currentUser && "Back"}To The Best <br /> Choice Property Portal</p>
       </div>
       
       <div className="ex-sec">

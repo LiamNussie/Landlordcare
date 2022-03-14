@@ -1,6 +1,7 @@
-// import { userActionTypes } from '../constants/userActionTypes'
-// import { baseUrl } from '../../config.json'
-// import axios from 'axios';
+import { userActionTypes } from '../constants/userActionTypes';
+import baseUrl from '../../config';
+import axios from 'axios';
+import { toast } from 'react-toastify';
 // import { toast } from 'react-toastify'
 
 // export const signup = (formData, history) => 
@@ -59,33 +60,39 @@
 //    }
 // }
 
-// export const loaduser = (history)=> async dispatch=> {
-//    try {
-//       const config = {
-//          headers: {
-//             "Authorization": `Bearer ${localStorage.WEHAUL_ADMIN_TOKEN}`
-//             }
-//       }
-//       if(localStorage.WEHAUL_ADMIN_TOKEN){
-//          const {data} = await axios.get(`${baseUrl}/admin/settings/view-profile`, config);
-//             console.log('line 55b', data)
-//             dispatch({type: userActionTypes.LOADUSER_SUCCESS, payload: data});
-
-//       }else{
-//          // throw Error('token is absent')
-//          localStorage.removeItem('WEHAUL_ADMIN_TOKEN')
-//          window.location.href = '/'
-//       }
-       
-//    } catch (error) {
-//       localStorage.removeItem('WEHAUL_ADMIN_TOKEN')
-//       window.location.href = '/'
-//       console.log('heloooooo')
-//       if(error.response){
-//          console.log(error.response.data)
-//          localStorage.removeItem('WEHAUL_ADMIN_TOKEN')
-//          window.location.href = '/'
-//       }
-//    }
-// }
+export const loaduser = (history, id) => async dispatch => {
+    try {
+        const id = localStorage.LLC_ID
+       const config = {
+          headers: {
+             "Authorization": `Bearer ${localStorage.LLC_TOKEN}`
+             }
+       }
+       if(localStorage.LLC_TOKEN){
+          const {data} = await axios.get(`${baseUrl}/users/profile/${id}`, config);
+             console.log('line 55b', data)
+             dispatch({type: userActionTypes.LOADUSER_SUCCESS, payload: data});
+ 
+       }else{
+        //    toast.error("Session Expired, Please Log in again.")
+          throw Error('token is absent')
+        //   localStorage.removeItem('LLC_TOKEN')
+        //   window.location.href = '/'
+       }
+        
+    } catch (error) {
+        // toast.error("Session Expired, Please Log in again.")
+       localStorage.removeItem('LLC_TOKEN')
+       window.location.href = '/'
+       console.log('heloooooo')
+       if(error.response){
+        console.log(error?.response?.data?.message)
+           if(error?.response?.data?.message === "Jwt expired") {
+            localStorage.removeItem('LLC_TOKEN')
+            window.location.href = '/'
+           }
+       }
+    }
+ }
+    
    
