@@ -1,0 +1,239 @@
+.review-modal {
+    position: fixed;
+    width: 100vw;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    height: 100vh;
+    animation: fadeIn 150ms linear 1;
+    background-color: rgba(11, 14, 17, 0.2);
+    transition: 250ms ease-in;
+    z-index: 10000000000000000000000000000000000000;
+
+    .wrapper {
+        width: 100vw;
+        left: 0;
+        top: 0;
+        height: 100vh;
+        position: relative;
+        z-index: 1000;
+
+        .modal {
+            border-radius: 20px;
+            width: 950px;
+            height: 645px;
+            box-shadow: 0px 18px 36px #00000017;
+            background-color: #fff;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 2rem 2.5rem 2.5rem 2.5rem;
+            
+            
+                .top {
+                    display: flex;
+                    justify-content: space-between;
+    
+                    .mtitle {
+                        color: #1E2329;
+                        font-size: 22px;
+                        font-weight: 700;
+                    }
+    
+                    svg {
+                        cursor: pointer;
+                    }
+                }
+
+                .bottom {
+                    display: flex;
+                    gap: 10px;
+                    margin-top: 2rem;
+                    justify-content: space-between;
+
+                    form {
+                        flex: 1 1 400px;
+
+                        button {
+                            border: none;
+                            outline: none;
+                            border-radius: 6px;
+                            padding: 12px;
+                            color: #fff;
+                            font-weight: 500;
+                            background-color: #F36B09;
+                            cursor: pointer;
+                            margin-top: 1rem;
+                            font-family: 'Quicksand', sans-serif;
+                        }
+
+                        .scroll {
+                            height: 470px;
+                            overflow-y: scroll;
+                            padding-right: 1.5rem;
+
+                            .review {
+                                margin-top: 1rem;
+
+                                .review-title {
+                                    font-weight: 700;
+                                    color: #0E0E2C;
+                                    font-size: 20px;
+                                }
+                                .rev2 {
+                                    text-transform: uppercase;
+                                    color: #4C4C4C;
+                                    font-weight: 600;
+                                    margin-top: 1rem;
+                                }
+
+                                    .input {
+
+                                        textarea {
+                                            background: #F5F5F5;
+                                            border: 1px solid #DDE5E9;
+                                            box-sizing: border-box;
+                                            border-radius: 6px;
+                                            padding: 10px;
+                                            margin-top: .5rem;
+                                            width: 100%;
+                                            outline: none;
+                                        }
+                                    }
+                                }
+                            
+                            
+                            .rating {
+
+                                .rating-title {
+                                    font-weight: 700;
+                                    color: #0E0E2C;
+                                    font-size: 20px;
+                                }
+
+                                .input {
+                                    margin-top: 1rem;
+
+                                    .flexs {
+                                        display: flex;
+                                        align-items: center;
+                                        gap: 4rem;
+
+                                        .lab {
+                                            margin-top: .5rem;
+                                            font-weight: 700;
+                                        }
+                                    }
+
+                                    .label {
+                                        color: #4C4C4C;
+                                        text-transform: uppercase;
+                                        font-weight: 600;
+                                    }
+                                    .para {
+                                        color: #737373;
+                                        font-size: 14px;
+                                    }
+                                }
+                            }
+
+                            .input {
+                                margin-bottom: 20px;
+                                position: relative;
+    
+                                .bubbles {
+                                    margin-top: 1rem;
+                                    display: flex;
+                                    flex-wrap: wrap;
+                                    gap: .9rem;
+    
+                                    .bub {
+                                        padding: 10px 24px;
+                                        background: #F5F5F5;
+                                        border-radius: 15px;
+                                        width: max-content;
+                                        color: #1E2329;
+                                        cursor: pointer;
+                                    }
+                                    #selected {
+                                        background-color: #FDE9DA !important;
+                                    }
+                                }
+            
+                                i {
+                                    position: absolute;
+                                    right: 3%;
+                                    top: 57%;
+                                    color: #6B7588;
+                                    cursor: pointer;
+                                }
+            
+                                label {
+                                    font-size: 16px;
+                                    font-weight: 700;
+                                    color: #8F90A6;
+                                    
+                                }
+                                input,
+                                select {
+                                    outline: none;
+                                    width: 100%;
+                                    border: 1px solid #DDE5E9;
+                                    box-sizing: border-box;
+                                    margin-top: 7px;
+                                    border-radius: 6px;
+                                    background-color: #F5F5F5;
+                                    padding: 14px 35px 14px 14px;
+                                    font-family: 'Quicksand', sans-serif;
+                                }
+                            }
+
+                        }
+                    }
+
+                    .right {
+                        flex: 1 1 400px;
+                        background-color: #fff;
+                        padding: 1rem;
+
+                        .tit {
+                            color: #1E2329;
+                            font-size: 22px;
+                            font-weight: 700;
+                            margin-bottom: 2rem;
+                        }
+
+                        .opt {
+                            display: flex;
+                            margin-bottom: 1rem;
+
+                            .sn {
+                                margin-right: 1rem;
+                                padding: 4px 10px;
+                                border-radius: 50%;
+                                height: max-content;
+                                color: #F36B09;
+                                font-weight: 500;
+                                background-color: #FDE9DA;
+                            }
+                            .para {
+                                font-weight: 500;
+
+                                span {
+                                    text-decoration: underline;
+                                    color: #F36B09;
+                                }
+                            }
+                        }
+                        .info {
+                            margin-top: 2rem;
+                            font-weight: 500;
+                            color: #BFBFB7;
+                        }
+                    }
+
+                }
+        }
+    }
+}

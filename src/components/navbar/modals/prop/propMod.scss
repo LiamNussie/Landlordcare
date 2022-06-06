@@ -1,0 +1,73 @@
+.prop-mod {
+    position: absolute;
+    left: 20%;
+    top: 150%;
+
+        .modal {
+            border-radius: 20px;
+            width: 400px;
+            display: flex;
+            justify-content: space-between;
+            height: max-content;
+            box-shadow: 0px 18px 36px #00000017;
+            background-color: #fff;
+            position: absolute;
+            color: #000 !important;
+            padding: 1rem 2rem;
+            z-index: 1000;
+
+
+            .top-links {
+                display: block;
+                color: #000 !important;
+
+                .x {
+                    cursor: default;
+                    &:hover {
+                        color: #000;
+                    }
+                }
+
+                .lab {
+                    padding-bottom: 1rem;
+                    margin-bottom: 1rem;
+                    border-bottom: 2px solid #E0E0E0;
+                }
+
+                .lis {
+                    margin: 2rem auto;
+                    font-weight: 500;
+
+                    span {
+                        color: #F36B09;
+                        margin-left: 5px;
+                    }
+                }
+            }
+            .mid-links {
+                display: block;
+                color: #000 !important;
+
+                .x {
+                    cursor: default;
+                    &:hover {
+                        color: #000;
+                    }
+                }
+
+                .lab {
+                    padding-bottom: 1rem;
+                    margin-bottom: 1rem;
+                    border-bottom: 2px solid #E0E0E0;
+                }
+
+                .lis {
+                    margin: 2rem auto;
+                    font-weight: 500;
+                }
+            }
+
+
+        
+    }
+}

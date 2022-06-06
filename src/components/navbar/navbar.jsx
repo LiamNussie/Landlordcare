@@ -8,6 +8,12 @@ import Pp from '../../assets/home-assets/userimg.png';
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { useState } from 'react';
+import LoginMod from './modals/login/loginMod';
+import ResourceMod from './modals/resources/resourceMod';
+import PropMod from './modals/prop/propMod';
+import SellMod from './modals/sell/sellMod';
+import RentMod from './modals/rent/rentMod';
+import BuyMod from './modals/buy/buyMod';
 
 const Navbar = () => {
 
@@ -16,6 +22,12 @@ const Navbar = () => {
     // const {firstname, image} = currentUser?.data;
 
     const [showLogin, setShowLogin] = useState(false);
+    const [showLogMod, setShowLogMod] = useState(false);
+    const [showResMod, setShowResMod] = useState(false);
+    const [showPropMod, setShowPropMod] = useState(false);
+    const [showSellMod, setShowSellMod] = useState(false);
+    const [showRentMod, setShowRentMod] = useState(false);
+    const [showBuyMod, setShowBuyMod] = useState(false);
     const [showSignup, setShowSignup] = useState(false);
     const history = useHistory();
 
@@ -49,17 +61,28 @@ const Navbar = () => {
             :
             <div className="middle">
                 <ul className="mid-links">
-                    <li>Buy<i className="fas fa-angle-down"></i></li>
-                    <li>Rent<i className="fas fa-angle-down"></i></li>
-                    <li>Sell<i className="fas fa-angle-down"></i></li>
-                    <li>Property Services<i className="fas fa-angle-down"></i></li>
-                    <li>Resources<i className="fas fa-angle-down"></i></li>
+                    <li onClick={() => setShowBuyMod(prev => !prev)}>Buy<i className="fas fa-angle-down"></i></li>
+                    <li onClick={() => setShowRentMod(prev => !prev)}>Rent<i className="fas fa-angle-down"></i></li>
+                    <li onClick={() => setShowSellMod(prev => !prev)}>Sell<i className="fas fa-angle-down"></i></li>
+                    <li onClick={() => setShowPropMod(prev => !prev)}>Property Services<i className="fas fa-angle-down"></i></li>
+                    <li onClick={() => setShowResMod(prev => !prev)}>Resources<i className="fas fa-angle-down"></i></li>
+                    {showBuyMod && <BuyMod />}
+                    {showRentMod && <RentMod />}
+                    {showSellMod && <SellMod />}
+                    {showPropMod && <PropMod />}
+                    {showResMod && <ResourceMod />}
                 </ul>
             </div>}
             <div className="right">
                 <ul>
-                    {currentUser ? <><div style={{backgroundImage: `url(${currentUser?.data?.image})`}} className='pp'></div><i className="fas fa-angle-down"></i></> : <li onClick={() => setShowLogin(true)}>Login<i className="fas fa-angle-down"></i></li>}
+                    {currentUser ? <>
+                    <div style={{backgroundImage: `url(${currentUser?.data?.image})`}} className='pp'></div><i onClick={() => currentUser ? setShowLogMod(prev => !prev) : setShowLogin(true)} className="fas fa-angle-down"></i>
+                    </> 
+                    : 
+                    <li onClick={() => currentUser ? setShowLogMod(prev => !prev) : setShowLogin(true)}>Login<i className="fas fa-angle-down"></i></li>
+                    }
                     <li className='diff' onClick={handleModals}>Post Property<span>Free</span></li>
+                    {showLogMod && <LoginMod setShowLogMod={setShowLogMod} />}
                 </ul>
             </div>
 

@@ -32,7 +32,6 @@ const LoginModal = ({setShowLogin}) => {
             const {data} = await axios.post(`${baseUrl}/auth/sign-in`, datax)
             console.log(data)
             localStorage.setItem("LLC_TOKEN", data.data.token);
-            localStorage.setItem("LLC_ID", data?.data.uid);
             dispatch({ type: userActionTypes.SIGNIN_SUCCESS, payload: data });
             setLoading(false)
             setShowLogin(false)

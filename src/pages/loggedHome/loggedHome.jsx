@@ -15,6 +15,8 @@ import Testimonies from '../home-landing/testimonies/testimonies';
 import TopDealers from '../home-landing/topDealers/topDealers';
 import BudgetCalc from '../../components/budgetCalc/budgetCalc';
 import ExploreL from '../home-landing/exploreL/exploreL';
+import ReviewModal from '../../components/reviewModal/reviewModal';
+import { useState } from 'react';
 
 const data = [
     {
@@ -155,6 +157,9 @@ const comments = [
 
 
 const LoggedHome = () => {
+
+    const [showReviewModal, setShowReviewModal] = useState(false);
+
     return (
         <div className="logged-home">
             <Hero />
@@ -189,10 +194,10 @@ const LoggedHome = () => {
             <div className="main-div">
                 <div className="txt-btn">
                     <div className="txt">
-                        <p className="top"><span>Rental</span> Homes For Everyone</p>
-                        <p className="bottom">Explore from Apartments, land, builder floors, villas and more</p>
+                        <p className="top">Rate your locality</p>
+                        <p className="bottom">Tell so what’s so spectacular about your enviroment</p>
                     </div>
-                    <button>Explore Renting <i className="fas fa-arrow-right"></i></button>
+                    <button onClick={() => setShowReviewModal(true)}>Rate your locality <i className="fas fa-arrow-right"></i></button>
                 </div>
             </div>
             <div className="flexbox">
@@ -336,6 +341,7 @@ const LoggedHome = () => {
             <ExploreL />
             <TopDealers />
             <Testimonies />
+            {showReviewModal && <ReviewModal setShowReviewModal={setShowReviewModal} />}
         </div>
     )
 }

@@ -62,14 +62,13 @@ import { toast } from 'react-toastify';
 
 export const loaduser = (history, id) => async dispatch => {
     try {
-        const id = localStorage.LLC_ID
        const config = {
           headers: {
              "Authorization": `Bearer ${localStorage.LLC_TOKEN}`
              }
        }
        if(localStorage.LLC_TOKEN){
-          const {data} = await axios.get(`${baseUrl}/users/profile/${id}`, config);
+          const {data} = await axios.get(`${baseUrl}/users/profile/one`, config);
              console.log('line 55b', data)
              dispatch({type: userActionTypes.LOADUSER_SUCCESS, payload: data});
  

@@ -2,6 +2,9 @@ import './signupModal.scss';
 import { useState } from 'react';
 import Fb from './fb.svg';
 import Go from './go.svg';
+import { toast } from 'react-toastify';
+import baseUrl from '../../config';
+import axios from 'axios';
 
 const SignupModal = ({setShowSignup}) => {
     const [passwordShown, setPasswordShown] = useState(false);
@@ -24,26 +27,25 @@ const SignupModal = ({setShowSignup}) => {
         phone,
     }
 
-    // const handleSubmit = async (e) => {
-    //     e.preventDefault();
-    //     setLoading(true)
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setLoading(true)
 
-    //     try {
-    //         const {data} = await axios.post(`${baseUrl}/auth/sign-in`, datax)
-    //         console.log(data)
-    //         localStorage.setItem("LLC_TOKEN", data.data.token);
-    //         localStorage.setItem("LLC_ID", data?.data.uid);
-    //         dispatch({ type: userActionTypes.SIGNIN_SUCCESS, payload: data });
-    //         setLoading(false)
-    //         setShowLogin(false)
-    //         toast.success(data.message)
-    //         window.location.href = "/home";
-    //     } catch (error) {
-    //         console.log(error?.response?.data?.message)
-    //         setLoading(false)
-    //         toast.error(error?.response?.data?.message)
-    //     }
-    // }
+        try {
+            const {data} = await axios.post(`${baseUrl}/auth/sign-up`, datax)
+            console.log(data)
+            // localStorage.setItem("LLC_TOKEN", data.data.token);
+            // localStorage.setItem("LLC_ID", data?.data.uid);
+            setLoading(false)
+            setShowSignup(false)
+            toast.success(data.message)
+            window.location.href = "/home";
+        } catch (error) {
+            console.log(error?.response?.data?.message)
+            setLoading(false)
+            toast.error(error?.response?.data?.message)
+        }
+    }
 
     return (
         <div className="signup-modal">
@@ -55,7 +57,7 @@ const SignupModal = ({setShowSignup}) => {
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M1.12639 0.361832C1.51691 -0.0286919 2.15008 -0.0286919 2.5406 0.361832L9.50016 7.32139L16.4597 0.361832C16.8502 -0.0286919 17.4834 -0.0286919 17.8739 0.361832C18.2645 0.752357 18.2645 1.38552 17.8739 1.77605L10.9144 8.73561L17.8739 15.6952C18.2645 16.0857 18.2645 16.7189 17.8739 17.1094C17.4834 17.4999 16.8502 17.4999 16.4597 17.1094L9.50016 10.1498L2.5406 17.1094C2.15008 17.4999 1.51691 17.4999 1.12639 17.1094C0.735865 16.7189 0.735865 16.0857 1.12639 15.6952L8.08595 8.73561L1.12639 1.77605C0.735865 1.38552 0.735865 0.752357 1.12639 0.361832Z" fill="#24292E"/>
                         </svg>
                     </div>
-                    <form>
+                    <form onSubmit={handleSubmit}>
                         <div className="tops">
                             <div className="input">
                                 <label>FIRST NAME</label>
@@ -79,7 +81,7 @@ const SignupModal = ({setShowSignup}) => {
                             <div className="input">
                                 <label>PHONE NUMBER</label><br />
                                <select name="">
-
+                                    <option>+234</option>
                                </select>
                             </div>
                             <div className="input">
@@ -110,7 +112,7 @@ const SignupModal = ({setShowSignup}) => {
                             
                         </div>
                         <div className="bottom">
-                            <button type='submit'>Sign Up<i className="fas fa-arrow-right"></i></button>
+                            <button type='submit'>{loading ? "Signing Up..." : "Sign Up"}<i className="fas fa-arrow-right"></i></button>
                             <p className="info">Or Signin with</p>
                             <div className="socials">
                                 <img src={Fb} alt="facebook_icon" />
